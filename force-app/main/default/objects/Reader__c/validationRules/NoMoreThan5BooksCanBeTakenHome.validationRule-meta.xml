@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoMoreThan5BooksCanBeTakenHome</fullName>
+    <active>true</active>
+    <description>No more than 5 books can be taken home (except for VIPs - up to 15 books).</description>
+    <errorConditionFormula>IF (ISPICKVAL(SubscriptionType__c , &quot;VIP&quot;),NumberOfHoldBooks__c  &gt; 15, NumberOfHoldBooks__c &gt; 5)</errorConditionFormula>
+    <errorDisplayField>NumberOfHoldBooks__c</errorDisplayField>
+    <errorMessage>No more than 5 books can be taken home (except for VIPs - up to 15 books).</errorMessage>
+</ValidationRule>
